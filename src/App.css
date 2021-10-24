@@ -16,3 +16,9 @@ nav {
   align-items: center;
   list-style: none;
 }
+.items {
+  text-align: center;
+}
+.itemDetails {
+  text-align: center;
+}
