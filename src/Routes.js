@@ -6,11 +6,13 @@ import About   from './About';
 import Shop from './Shop';
 import ItemDetails from './ItemDetails'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import BrowserRouter from 'react-router-dom/BrowserRouter'
+
 
 
 const Routes = () => {
     return(
-            <BrowserRouter>
+            <BrowserRouter  basename={process.env.PUBLIC_URL}>
              <div>
             <Nav />
        <Switch>     
