@@ -11,7 +11,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const Routes = () => {
     return(
-            <BrowserRouter>
+            <BrowserRouter basename ="/directory-name">
              <div>
             <Nav />
        <Switch>     
