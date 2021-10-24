@@ -1,4 +1,6 @@
 import React, {useEffect,useState} from "react";
+import './App.css';
+import {Link} from 'react-router-dom';
 
 const Shop = () => {
 
@@ -7,7 +9,9 @@ const Shop = () => {
     },[]);
 
 
-    const [items,setItems] = useState([]);
+    const [items,setItems] = useState([
+
+    ]);
 
     const fetchItems = async () => {
         const myData = await fetch(
@@ -15,8 +19,8 @@ const Shop = () => {
         );
 
         const items = await myData.json();
-    console.log(items);
-    console.log(items.data);
+    //console.log(items);
+    //console.log(items.data);
 
     setItems(items.data);
 
@@ -24,11 +28,12 @@ const Shop = () => {
     return(
         <div>
           {items.map(item => (
-             <h1 key={item.itemId}>{item.name}</h1>  
+             <h3 className="items"key={item.itemId}>
+                 <Link to={`/shop/${item.itemId}`}>{item.item.name}
+             </Link>
+             </h3>  
               ))}
-        
-            <h1>Shop Page</h1>
-        </div>
+                </div>
     );
 }
 export default Shop;
